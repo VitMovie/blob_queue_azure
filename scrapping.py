@@ -11,7 +11,7 @@ def scrapping():
         messages = queue_service.get_messages('monitoring')
         if messages:
             for message in messages:
-                print(message.content)
+                print(f"Receiving user {message.content} from monitoring service")
                 queue_service.delete_message('monitoring', message.id, message.pop_receipt)
         time.sleep(30)
 
