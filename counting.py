@@ -20,9 +20,9 @@ def counting():
         messages = queue_service.get_messages('newuser')
         if messages:
             for message in messages:
-                print(f"Receiving {new_user} from newuser channel...")
+                print(f"Receiving {message.content} from newuser channel...")
                 add_new_user(message.content)
-                print(f"Deleteing {new_user} from queue of users...")
+                print(f"Deleteing {message.content} from queue of users...")
                 queue_service.delete_message('newuser', message.id, message.pop_receipt)
         new_proxy = get_new_proxy()
         print(f"Receiving proxy {new_proxy} from queue of proxies...")
