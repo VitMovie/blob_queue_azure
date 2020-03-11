@@ -14,4 +14,5 @@ def scrapping():
                 queue_service.delete_message('monitoring', message.id, message.pop_receipt)
         time.sleep(30)
 
+
 scrapping()
