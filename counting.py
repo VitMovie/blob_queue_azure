@@ -4,7 +4,8 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 from azure.storage.queue import QueueService
 
 from config import account_name, account_key
-from upload import upload
+from load import upload
+from delivery import get_new_proxy
 
 
 def add_new_user(new_user):
@@ -20,6 +21,7 @@ def counting():
             for message in messages:
                 add_new_user(message.content)
                 queue_service.delete_message('newuser', message.id, message.pop_receipt)
+        print(get_new_proxy())
         time.sleep(30)
 
 
