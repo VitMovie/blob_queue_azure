@@ -1,4 +1,5 @@
 import time
+
 from azure.storage.queue import QueueService
 
 from config import account_name, account_key

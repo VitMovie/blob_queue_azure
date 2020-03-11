@@ -1,6 +1,5 @@
 import glob, time
 
-from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 from azure.storage.queue import QueueService
 
 from config import account_name, account_key
